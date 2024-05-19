@@ -29,10 +29,10 @@
 	})
 </script>
 
-<div class="bg-base-200">
+<div class="bg-base-200 min-h-screen flex flex-col">
 	<Nav />
 
-	<div class="">
+	<div class="flex-1">
 		<slot />
 	</div>
 	<Footer />
