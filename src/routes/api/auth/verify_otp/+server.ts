@@ -18,6 +18,9 @@ export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
   redirectTo.searchParams.delete('token_hash')
   redirectTo.searchParams.delete('type')
 
+if (type === 'recovery') redirectTo.pathname = '/auth/change_password'
+  
+
   if (token_hash && type) {
     const { data, error } = await supabase.auth.verifyOtp({ type, token_hash })
     if (!error) {
