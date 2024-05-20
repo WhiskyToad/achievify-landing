@@ -43,7 +43,7 @@
 				>
 			</div>
 			<div class="stat-title">Achievify it</div>
-			<div class="stat-value text-primary-focus">1000%</div>
+			<div class="stat-value text-secondary">1000%</div>
 			<div class="stat-desc">Written goals are 1000% more likely to be achieved.</div>
 		</div>
 
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 			<div class="stat-title">Attrition</div>
-			<div class="stat-value text-secondary">50%</div>
+			<div class="stat-value text-primary">50%</div>
 			<div class="stat-desc">50% of people give up in the first month</div>
 		</div>
 	</div>

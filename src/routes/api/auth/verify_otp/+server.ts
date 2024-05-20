@@ -4,7 +4,6 @@ import { redirect } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
 
 export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
-  console.log('fired')
   const token_hash = url.searchParams.get('token_hash')
   const type = url.searchParams.get('type') as EmailOtpType | null
   const next = '/auth/confirm'
@@ -20,7 +19,7 @@ export const GET: RequestHandler = async ({ url, locals: { supabase } }) => {
   redirectTo.searchParams.delete('type')
 
   if (token_hash && type) {
-    const { error } = await supabase.auth.verifyOtp({ type, token_hash })
+    const { data, error } = await supabase.auth.verifyOtp({ type, token_hash })
     if (!error) {
       redirectTo.searchParams.delete('next')
       throw redirect(303, redirectTo)
