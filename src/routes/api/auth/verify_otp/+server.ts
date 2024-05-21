@@ -28,7 +28,7 @@ if (type === 'recovery') redirectTo.pathname = '/auth/change_password'
       throw redirect(303, redirectTo)
     }
   }
-
+  
   redirectTo.pathname = '/auth/error'
   throw redirect(303, redirectTo)
 }
