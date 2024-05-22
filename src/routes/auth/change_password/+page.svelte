@@ -1,22 +1,10 @@
 <script lang="ts">
     import { enhance } from '$app/forms';
-    import { goto } from '$app/navigation';
-    import type { SubmitFunction } from '@sveltejs/kit';
 	import PasswordCriteria from '$lib/components/PasswordCriteria.svelte';
   import { superForm } from 'sveltekit-superforms';
 
 export let data;
 const { form, errors } = superForm(data.form);
-
-  
-    // const handleSubmit: SubmitFunction = async () => {
-
-    // return async (response) => {
-    //   if (response.result.type === 'success') {
-    //     // goto('/');
-    //   }
-    // };
-    // };
   </script>
   
   <section class="bg-gray-50 dark:bg-gray-900">

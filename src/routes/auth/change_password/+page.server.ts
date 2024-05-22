@@ -22,5 +22,6 @@ export const actions: Actions = {
     }
     const password = form.data.password
     await supabase.auth.updateUser({password})
+    throw redirect(303, '/auth/change_password/successful')
   },
 }
