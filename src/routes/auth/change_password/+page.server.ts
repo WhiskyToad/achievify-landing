@@ -16,12 +16,11 @@ export const load: PageServerLoad = async ({ locals: {  session } }) => {
 export const actions: Actions = {
   default: async ({ request, locals: { supabase } }) => {
     const form = await superValidate(request, zod(passwordSchema));
-
     if (!form.valid) {
       // Again, return { form } and things will just work.
       return fail(400, { form });
     }
-    console.log(form, 'form')
-    // await supabase.auth.updateUser({password})
+    const password = form.data.password
+    await supabase.auth.updateUser({password})
   },
 }
